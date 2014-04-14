@@ -14,7 +14,8 @@ module.exports = function(app) {
 
   // Server API Routes
   app.get('/api/awesomeThings', api.awesomeThings);
-  
+  app.get('/api/planTemplates', api.planTemplates);
+
   app.post('/api/users', users.create);
   app.put('/api/users', users.changePassword);
   app.get('/api/users/me', users.me);

@@ -1,11 +1,19 @@
-.header(ng-controller='NavbarCtrl')
-    ul.nav.nav-pills.pull-right
-        li(ng-repeat='item in menu', ng-class='{active: isActive(item.link)}')
-            a(ng-href='{{item.link}}') {{item.title}}
-        li(ng-hide='currentUser', ng-class='{active: isActive("/login")}')
-            a(href='/login') Login
-        li(ng-hide='currentUser', ng-class='{active: isActive("/signup")}')
-            a(href='/signup') Sign up
-        li(ng-show='currentUser', ng-class='{active: isActive("/logout")}')
-            a(href='', ng-click='logout()') Logout
-    h3.text-muted gorillaPlanner
+header.container
+    .navbar.navbar-inverse.navbar-fixed-top(ng-controller='NavbarCtrl')
+        .navbar-header
+            button.btn.btn-default.navbar-toggle(data-toggle='collapse', data-target='#main-menu-collapse')
+                span.sr-only Toggle navigation
+                span.icon-bar
+                span.icon-bar
+                span.icon-bar
+            a.navbar-brand(href='.') Gorilla Planner
+        .navbar-collapse.collapse#main-menu-collapse
+            ul.nav.navbar-nav
+                li.nav(ng-repeat='item in menu', ng-class='{active: isActive(item.link)}')
+                    a(ng-href='{{item.link}}') {{item.title}}
+                li.nav(ng-hide='currentUser', ng-class='{active: isActive("/login")}')
+                    a(href='/login') Login
+                li.nav(ng-hide='currentUser', ng-class='{active: isActive("/signup")}')
+                    a(href='/signup') Sign up
+                li.nav(ng-show='currentUser', ng-class='{active: isActive("/logout")}')
+                    a(href='', ng-click='logout()') Logout

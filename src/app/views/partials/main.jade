@@ -1,22 +1,8 @@
+div(ng-include='\'partials/navbar\'')
+
 .jumbotron
-  h1
-    | 'Oooo, 'Oooo
-    span(ng-show='currentUser') {{ currentUser.name }}
-    | !
-
   p.lead
-    img(src="images/yeoman.png", alt="I'm Yeoman")
-    br
-    | Always a pleasure scaffolding your apps.
-    span.test
-      | Url update test
-  p
-    a.btn.btn-lg.btn-success(ng-href='#') Splendid!
-    
-.row.marketing
-  div(ng-repeat='thing in awesomeThings')
-    h4 {{thing.name}}
-    p {{thing.info}}
-
-.footer
-  p ♥ from the Yeoman team
+    img.main-logo(src='http://imageshack.com/a/img836/1615/kbgd.png', alt="Gorilla Planner Logo", width='300')
+    P Simple Social Planning
+    select
+      option(ng-repeat='plan in planTemplates') {{ plan.name }}

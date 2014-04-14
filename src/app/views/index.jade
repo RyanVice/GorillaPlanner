@@ -9,7 +9,7 @@ html.no-js
     meta(charset="utf-8")
     meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
     base(href="/")
-    title Gorilla Planner
+    title
     meta(name="description", content="")
     meta(name="viewport", content="width=device-width")
     // Place favicon.ico and apple-touch-icon.png in the root directory
@@ -30,9 +30,6 @@ html.no-js
       <![endif]
 
     // Add your site or application content here
-
-    div(ng-include='\'partials/navbar.html\'')
-
     div(class="container" ng-view)
 
     // Google Analytics: change UA-XXXXX-X to be your site's ID.
@@ -41,6 +38,8 @@ html.no-js
       (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
       g.src='//www.google-analytics.com/ga.js';
       s.parentNode.insertBefore(g,s)}(document,'script'));
+
+    script(src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js")
 
     <!-- build:js(app) scripts/vendor.js -->
     <!-- bower:js -->
@@ -55,7 +54,7 @@ html.no-js
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script src="scripts/app.js"></script>
     <script src="scripts/controllers/main.js"></script>
-    <script src="scripts/controllers/1a`    `   qa` ``bar.js"></script>
+    <script src="scripts/controllers/navbar.js"></script>
     <script src="scripts/controllers/login.js"></script>
     <script src="scripts/controllers/signup.js"></script>
     <script src="scripts/controllers/settings.js"></script>

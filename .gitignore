@@ -1,0 +1,15 @@
+node_modules/
+public/
+.tmp
+/
+.sass-cache
+app/
+bower_components/
+
+
+# dist is it's own repo
+dist/
+
+# Web storm project files
+**/.idea/workspace.xml
+**/.idea/tasks.xml

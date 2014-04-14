@@ -2,7 +2,8 @@
 
 var mongoose = require('mongoose'),
   User = mongoose.model('User'),
-  Thing = mongoose.model('Thing');
+  Thing = mongoose.model('Thing'),
+  PlanTemplate = mongoose.model('PlanTemplate');
 
 /**
  * Populate database with sample application data
@@ -34,6 +35,22 @@ Thing.find({}).remove(function() {
       console.log('finished populating things');
     }
   );
+});
+
+//Clear old things, then add things in
+PlanTemplate.find({}).remove(function() {
+    PlanTemplate.create({
+            name : 'What would you like to plan today?'
+        }, {
+            name : 'Event'
+        }, {
+            name : 'Trip'
+        },{
+            name : 'Shopping'
+        }, function() {
+            console.log('finished populating things');
+        }
+    );
 });
 
 // Clear old users, then add a default user
