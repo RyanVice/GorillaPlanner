@@ -25,6 +25,10 @@ angular.module('gorillaPlannerApp', [
         controller: 'SettingsCtrl',
         authenticate: true
       })
+      .when('/planner/:planTemplateName', {
+        templateUrl: 'partials/planner',
+        controller: 'PlannerCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

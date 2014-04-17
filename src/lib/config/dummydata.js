@@ -40,13 +40,14 @@ Thing.find({}).remove(function() {
 //Clear old things, then add things in
 PlanTemplate.find({}).remove(function() {
     PlanTemplate.create({
-            name : 'What would you like to plan today?'
+            name: 'Event',
+            columns: [
+              { displayName: 'Task', type: 'text'},
+              { displayName: 'Assigned to', type: 'text'}]
         }, {
-            name : 'Event'
-        }, {
-            name : 'Trip'
+            name: 'Trip'
         },{
-            name : 'Shopping'
+            name: 'Shopping'
         }, function() {
             console.log('finished populating things');
         }

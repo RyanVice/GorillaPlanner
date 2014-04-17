@@ -29,6 +29,8 @@ html.no-js
       <script src="bower_components/json3/lib/json3.min.js"></script>
       <![endif]
 
+    div(ng-include='\'partials/navbar.html\'')
+
     // Add your site or application content here
     div(class="container" ng-view)
 
@@ -38,8 +40,6 @@ html.no-js
       (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
       g.src='//www.google-analytics.com/ga.js';
       s.parentNode.insertBefore(g,s)}(document,'script'));
-
-    script(src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js")
 
     <!-- build:js(app) scripts/vendor.js -->
     <!-- bower:js -->
@@ -56,6 +56,7 @@ html.no-js
     <script src="scripts/controllers/main.js"></script>
     <script src="scripts/controllers/navbar.js"></script>
     <script src="scripts/controllers/login.js"></script>
+    <script src="scripts/controllers/planner.js"></script>
     <script src="scripts/controllers/signup.js"></script>
     <script src="scripts/controllers/settings.js"></script>
     <script src="scripts/services/auth.js"></script>
@@ -63,4 +64,5 @@ html.no-js
     <script src="scripts/services/user.js"></script>
     <script src="scripts/directives/mongooseError.js"></script>
     <!-- endbuild -->
-    
+
+    script(src='//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js')

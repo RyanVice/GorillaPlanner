@@ -56,11 +56,6 @@ body {
     border-bottom: 1px solid #e5e5e5;
 }
 
-.jumbotron .btn {
-    font-size: 21px;
-    padding: 14px 24px;
-}
-
 /* Supporting marketing content */
 .marketing {
     margin: 40px 0;
@@ -91,4 +86,13 @@ body {
     .jumbotron {
         border-bottom: 0;
     }
+}
+
+// Form tweaks
+.g-form-control {
+  margin: 2px;
+}
+
+.jumbotron form {
+  text-align: left;
 }
