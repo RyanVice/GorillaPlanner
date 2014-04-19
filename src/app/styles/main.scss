@@ -2,6 +2,21 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
 
 @import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
 
+.modal .modal-body {
+  max-height: 420px;
+  overflow-y: auto;
+}
+
+.go-main-view {
+  border-bottom: 1px solid;
+  border-bottom-color: #ccc;
+  border-bottom-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 6px;
+  padding: 30px;
+}
+
 .browsehappy {
     margin: 0.2em 0;
     background: #ccc;

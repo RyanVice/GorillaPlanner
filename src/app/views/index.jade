@@ -32,7 +32,8 @@ html.no-js
     div(ng-include='\'partials/navbar.html\'')
 
     // Add your site or application content here
-    div(class="container" ng-view)
+    .container-fluid
+      .go-main-view.col-sm-10.col-sm-offset-1(ng-view)
 
     // Google Analytics: change UA-XXXXX-X to be your site's ID.
     script.
