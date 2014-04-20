@@ -2,16 +2,56 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
 
 @import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
 
+h4 {
+  color: $brand-primary;
+  text-transform:uppercase;
+  font-weight: bold;
+}
+
+legend {
+  font-size: $font-size-h5;
+  font-weight: bold;
+  color: $gray;
+  border-bottom: 1px solid #bbbbbb;
+}
+
+label {
+  font-weight: normal;
+  color: $gray-light;
+}
+
+.modal-header {
+  padding:9px 15px;
+  border-bottom:1px solid #eee;
+  font-weight: bold;
+  font-size: $font-size-h4;
+  color: #eeeeee;
+  background-color: $brand-primary;
+  -webkit-border-top-left-radius: 5px;
+  -webkit-border-top-right-radius: 5px;
+  -moz-border-radius-topleft: 5px;
+  -moz-border-radius-topright: 5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
 .modal .modal-body {
   max-height: 420px;
   overflow-y: auto;
 }
 
+.modal .modal-footer {
+  background-color: $gray-lighter;
+  border-bottom-color: $gray-lighter;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
 .go-main-view {
   border-bottom: 1px solid;
   border-bottom-color: #ccc;
-  border-bottom-color: rgba(255, 255, 255, 0.9);
-  background-color: rgba(255, 255, 255, 0.9);
+  border-bottom-color: rgba(255, 255, 255, 0.92);
+  background-color: rgba(255, 255, 255, 0.92);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   border-radius: 6px;
   padding: 30px;
