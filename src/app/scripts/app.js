@@ -4,7 +4,8 @@ angular.module('gorillaPlannerApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
-  'ngRoute'
+  'ngRoute',
+  'ui.bootstrap'
 ])
   .config(function ($routeProvider, $locationProvider, $httpProvider) {
     $routeProvider
@@ -25,7 +26,10 @@ angular.module('gorillaPlannerApp', [
         controller: 'SettingsCtrl',
         authenticate: true
       })
-      .when('/planner/:planTemplateName', {
+      .when('/event-planner', {
+        templateUrl: 'partials/event-planner',
+        controller: 'EventPlannerCtrl'
+      }).when('/planner/:planTemplateName', {
         templateUrl: 'partials/planner',
         controller: 'PlannerCtrl'
       })
