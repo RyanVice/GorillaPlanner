@@ -1,0 +1,46 @@
+div.modal-lg
+  .modal-content
+    .modal-header
+      button.close(type='button', aria-hidden='true', data-ng-click='close()') ×
+      modal-title Add a task
+    .modal-body
+      form.form-horizontal
+        fieldset
+          legend What
+          .form-group
+            label.col-sm-3.control-label(for='summaryTextInput') Summary
+            .col-sm-9
+              input.form-control(id='summaryTextInput', type='text', placeholder='Enter task description', data-ng-model='task.summary')
+          .form-group
+            label.col-sm-3.control-label(for='detailsTextInput') Details
+            .col-sm-9
+              textarea.form-control(id='detailsTextInput', placeholder='Enter task details', rows='3', style='resize: none;')
+        fieldset
+          legend Who
+          .form-group
+            label.col-sm-3.control-label(for='assignedToInputEmail') Assigned to
+            .col-sm-9
+              input.form-control(type='email', placeholder='Enter email address or Facebook friend')
+          .form-group
+            .col-sm-9.col-sm-offset-3
+              .checkbox
+                label
+                  input(type='checkbox')
+                  | Assign to me
+              .checkbox
+                label
+                  input(type='checkbox')
+                  | Ask for volunteer
+        fieldset
+          legend When
+          .form-group
+            label.col-sm-3.control-label(for='dateInput') Date
+            .col-sm-9
+              input.form-control(id='dateInput', type='date', placeholder='Date')
+          .form-group
+            label.col-sm-3.control-label(for='timeInput') Time
+            .col-sm-9
+              input.form-control(id='timeInput', type='time', placeholder='Time')
+    .modal-footer
+      button.btn.btn-default(type='button', data-ng-click='cancel()') Cancel
+      button.btn.btn-success(type='button', data-ng-click='ok()') Add task
