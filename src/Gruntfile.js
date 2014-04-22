@@ -199,8 +199,7 @@ module.exports = function (grunt) {
     'bower-install': {
       app: {
         html: '<%= yeoman.app %>/views/index.jade',
-        ignorePath: '<%= yeoman.app %>/',
-        exclude: ['bootstrap-sass']
+        ignorePath: '<%= yeoman.app %>/'
       }
     },
 
