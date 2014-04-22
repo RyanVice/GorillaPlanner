@@ -31,7 +31,7 @@ h4 Event Planner
           .col-sm-10
             legend Tasks
           .col-sm-2.pull-right
-            input(type='submit', value='Add task', data-ng-click='addEditTask()').btn.btn-xs.btn-info
+            input(type='submit', value='Add task', data-ng-click='addEditTask()').btn.btn-info
         .col-sm-12
           div(data-ng-hide='tasks.length > 0')
             .alert.alert-warning
@@ -41,16 +41,18 @@ h4 Event Planner
                 .panel-heading
                   .panel-title
                     .row
-                      .col-sm-5
+                      .col-sm-4
                         a(href='#', style='color: white') {{ task.summary }}
                       .col-sm-4(style='color: white')
                         span.pull-right
-                          small {{ task.time + ' - ' + task.date }}
-                      .col-sm-3.pull-right
-                        button.btn.btn-xs.btn-default.glyphicon.glyphicon-pencil
-                        button.btn.btn-xs.btn-default.glyphicon.glyphicon-remove(data-ng-click='removeTask(task)')
+                          strong {{ task.date }}
+                          br
+                          small {{ task.time }}
+                      .col-sm-4.pull-right
+                        button.btn.btn-default.glyphicon.glyphicon-pencil
+                        button.btn.btn-default.glyphicon.glyphicon-remove(data-ng-click='removeTask(task)')
                         button(
-                          class='btn btn-xs btn-default glyphicon glyphicon-chevron-{{ isCollapsed ? "up" : "down" }}',
+                          class='btn btn-default glyphicon glyphicon-chevron-{{ isCollapsed ? "up" : "down" }}',
                           ng-click="isCollapsed = !isCollapsed"
                           data-target='#collapse{{$index}}',
                           data-toggle='collapse')

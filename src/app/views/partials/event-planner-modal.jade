@@ -1,46 +1,58 @@
 div.modal-lg
   .modal-content
     .modal-header
-      button.close(type='button', aria-hidden='true', data-ng-click='close()') ×
-      modal-title Add a task
+      .row
+        .col-sm-11
+          modal-title Add a task
+        .col-sm-1
+          button.btn.btn-default.glyphicon.glyphicon-remove(type='button', data-ng-click='cancel()')
     .modal-body
       form.form-horizontal
-        fieldset
-          legend What
-          .form-group
-            label.col-sm-3.control-label(for='summaryTextInput') Summary
-            .col-sm-9
-              input.form-control(id='summaryTextInput', type='text', placeholder='Enter task description', data-ng-model='task.summary')
-          .form-group
-            label.col-sm-3.control-label(for='detailsTextInput') Details
-            .col-sm-9
-              textarea.form-control(id='detailsTextInput', placeholder='Enter task details', rows='3', style='resize: none;')
-        fieldset
-          legend Who
-          .form-group
-            label.col-sm-3.control-label(for='assignedToInputEmail') Assigned to
-            .col-sm-9
-              input.form-control(type='email', placeholder='Enter email address or Facebook friend')
-          .form-group
-            .col-sm-9.col-sm-offset-3
-              .checkbox
-                label
-                  input(type='checkbox')
-                  | Assign to me
-              .checkbox
-                label
-                  input(type='checkbox')
-                  | Ask for volunteer
-        fieldset
-          legend When
-          .form-group
-            label.col-sm-3.control-label(for='dateInput') Date
-            .col-sm-9
-              input.form-control(id='dateInput', type='date', placeholder='Date')
-          .form-group
-            label.col-sm-3.control-label(for='timeInput') Time
-            .col-sm-9
-              input.form-control(id='timeInput', type='time', placeholder='Time')
+        .col-sm-6
+          fieldset
+            legend What
+            .form-group
+              label.col-sm-3.control-label(for='summaryTextInput') Summary
+              .col-sm-9
+                input.form-control(id='summaryTextInput', type='text', placeholder='Enter task description', data-ng-model='task.summary')
+            .form-group
+              label.col-sm-3.control-label(for='detailsTextInput') Details
+              .col-sm-9
+                textarea.form-control(id='detailsTextInput', placeholder='Enter task details', rows='3', style='resize: none;')
+          fieldset
+            legend When
+            .form-group
+              label.col-sm-3.control-label(for='dateInput') Date
+              .col-sm-9
+                input.form-control(id='dateInput', type='date', placeholder='Date')
+            .form-group
+              label.col-sm-3.control-label(for='timeInput') Time
+              .col-sm-9
+                input.form-control(id='timeInput', type='time', placeholder='Time')
+        .col-sm-6
+          fieldset
+            legend Who
+            .form-group
+              label.col-sm-3.control-label(for='assignedToInputEmail') Assigned to
+              .col-sm-9
+                input.form-control(type='email', placeholder='Enter email address or Facebook friend')
+            .form-group
+              .col-sm-9.col-sm-offset-3
+                .checkbox
+                  label
+                    input(type='checkbox')
+                    | Assign to me
+                .checkbox
+                  label
+                    input(type='checkbox')
+                    | Ask for volunteer
+
+            .alert.alert-info.col-sm-10.col-sm-offset-1
+              p
+              | Enter the email address or Facebook name above to have this task assigned to someone. Assigning a task will:
+              | (1) add that person to the plan's participant list
+              | (2) will ask the assigned person to accept this task.
+
     .modal-footer
       button.btn.btn-default(type='button', data-ng-click='cancel()') Cancel
       button.btn.btn-success(type='button', data-ng-click='ok()') Add task
