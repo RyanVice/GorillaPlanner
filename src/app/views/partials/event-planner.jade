@@ -1,70 +1,73 @@
-h4 Event Planner
-.well.col-sm-12
-  form.form-horizontal
-    // Overview
-    .col-sm-5
-      fieldset
-        legend Overview
-        .form-group
-          label.col-sm-3.control-label(for='eventTitleTextInput', data-ng-model='title') Title
-          .col-sm-9
-            input.form-control(id='eventTitleTextInput', type='text', placeholder="Enter the plan's title", autofocus='true')
-        .form-group
-          label.col-sm-3.control-label(for='eventDetailsTextInput', data-ng-model='description') Details
-          .col-sm-9
-            textarea.form-control(id='eventDetailsTextInput', placeholder="Enter the plan's details", rows='3', style='resize: none;')
+.row
+  h4 Event Planner
+.row
+  .well.col-sm-12
+    form.form-horizontal
+      // Overview
+      .col-sm-5
+        fieldset
+          legend Overview
+          .form-group
+            label.col-sm-3.control-label(for='eventTitleTextInput', data-ng-model='title') Title
+            .col-sm-9
+              input.form-control(id='eventTitleTextInput', type='text', placeholder="Enter the plan's title", autofocus='true')
+          .form-group
+            label.col-sm-3.control-label(for='eventDetailsTextInput', data-ng-model='description') Details
+            .col-sm-9
+              textarea.form-control(id='eventDetailsTextInput', placeholder="Enter the plan's details", rows='3', style='resize: none;')
 
-      // Participants
-      fieldset
-        legend Participants
-        .form-group
-          label.col-sm-3.control-label(for='assignedToInputEmail') Participant
-          .col-sm-9
-            input.form-control(type='email', placeholder='Email or Facebook')
-        .alert.alert-info
-          | Enter the email address or Facebook name above to add pariticipants to this plan.
+        // Participants
+        fieldset
+          legend Participants
+          .form-group
+            label.col-sm-3.control-label(for='assignedToInputEmail') Participant
+            .col-sm-9
+              input.form-control(type='email', placeholder='Email or Facebook')
+          .alert.alert-info
+            | Enter the email address or Facebook name above to add pariticipants to this plan.
 
-    // Tasks
-    .col-sm-7
-      fieldset
-        .row
-          .col-sm-10
-            legend Tasks
-          .col-sm-2.pull-right
-            input(type='submit', value='Add task', data-ng-click='addEditTask()').btn.btn-info
-        .col-sm-12
-          div(data-ng-hide='tasks.length > 0')
-            .alert.alert-warning
-                | No tasks added. Click the "Add task" button above to add a task.
-          .panel-group
-            .panel.panel-primary(data-ng-repeat='task in tasks')
-                .panel-heading
-                  .panel-title
-                    .row
-                      .col-sm-4
-                        a(href='#', style='color: white') {{ task.summary }}
-                      .col-sm-4(style='color: white')
-                        span.pull-right
-                          strong {{ task.date }}
-                          br
-                          small {{ task.time }}
-                      .col-sm-4.pull-right
-                        button.btn.btn-default.glyphicon.glyphicon-pencil
-                        button.btn.btn-default.glyphicon.glyphicon-remove(data-ng-click='removeTask(task)')
-                        button(
-                          class='btn btn-default glyphicon glyphicon-chevron-{{ isCollapsed ? "up" : "down" }}',
-                          ng-click="isCollapsed = !isCollapsed"
-                          data-target='#collapse{{$index}}',
-                          data-toggle='collapse')
-                .panel-collapse.collapse(id='collapse{{$index}}')
-                  .panel-body
-                    .col-sm-8
-                      {{ task.details }}
-                    .col-sm-4
-                      strong Assigned to
-                      ul.list-unstyled
-                        li(data-ng-repeat='participant in task.assignedTo')
-                          a(href="mailto:#") {{ participant }}
+      // Tasks
+      .col-sm-7
+          fieldset
+            .row
+              .col-sm-10
+                legend Tasks
+              .col-sm-2.pull-right
+                input(type='submit', value='Add task', data-ng-click='addEditTask()').btn.btn-info
+            .row
+              .col-sm-12
+                div(data-ng-hide='tasks.length > 0')
+                  .alert.alert-warning
+                      | Click the "Add task" button above to add a task.
+                .panel-group
+                  .panel.panel-primary(data-ng-repeat='task in tasks')
+                      .panel-heading
+                        .row
+                          .panel-title
+                            .col-sm-6
+                              a(href='#', style='color: white') {{ task.summary }}
+                            .col-sm-2(style='color: white')
+                              span.pull-right
+                                strong {{ task.date }}
+                                br
+                                small {{ task.time }}
+                            .col-sm-4.pull-right
+                              button.btn.btn-default.glyphicon.glyphicon-pencil
+                              button.btn.btn-default.glyphicon.glyphicon-remove(data-ng-click='removeTask(task)')
+                              button(
+                                class='btn btn-default glyphicon glyphicon-chevron-{{ isCollapsed ? "up" : "down" }}',
+                                ng-click="isCollapsed = !isCollapsed"
+                                data-target='#collapse{{$index}}',
+                                data-toggle='collapse')
+                      .panel-collapse.collapse(id='collapse{{$index}}')
+                        .panel-body
+                          .col-sm-8
+                            {{ task.details }}
+                          .col-sm-4
+                            strong Assigned to
+                            ul.list-unstyled
+                              li(data-ng-repeat='participant in task.assignedTo')
+                                a(href="mailto:#") {{ participant }}
 
 .row
   .pull-right
