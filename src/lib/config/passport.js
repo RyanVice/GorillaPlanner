@@ -3,23 +3,39 @@
 var mongoose = require('mongoose'),
     User = mongoose.model('User'),
     passport = require('passport'),
-    LocalStrategy = require('passport-local').Strategy;
+    LocalStrategy = require('passport-local').Strategy,
+    FacebookStrategy = require('passport-facebook').Strategy,
+    TwitterStrategy = require('passport-twitter').Strategy,
+    GoogleStrategy = require('passport-google').Strategy,
+    config = require('./lib/config/config');
 
 /**
  * Passport configuration
  */
 passport.serializeUser(function(user, done) {
-  done(null, user.id);
+  done(null, user);
 });
-passport.deserializeUser(function(id, done) {
+passport.deserializeUser(function(user, done) {
   User.findOne({
-    _id: id
+    _id: user.id
   }, '-salt -hashedPassword', function(err, user) { // don't ever give out the password or salt
     done(err, user);
   });
 });
 
-// add other strategies for more authentication flexibility
+// Configure Auth strategies
+passport.use(new FacebookStrategy({
+    clientID: config.facebook.clientID,
+    clientSecret: config.facebook.clientSecret,
+    callbackURL: config.facebook.callbackURL
+  },
+  function(accessToken, refreshToken, profile, done) {
+    process.nextTick(function () {
+      return done(null, profile);
+    });
+  }
+));
+
 passport.use(new LocalStrategy({
     usernameField: 'email',
     passwordField: 'password' // this is the virtual field on the model
