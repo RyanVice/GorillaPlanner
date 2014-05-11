@@ -3,7 +3,8 @@
 var api = require('./controllers/api'),
     index = require('./controllers'),
     users = require('./controllers/users'),
-    session = require('./controllers/session');
+    session = require('./controllers/session'),
+    passport = require('./env/passport');
 
 var middleware = require('./middleware');
 
@@ -23,6 +24,21 @@ module.exports = function(app) {
 
   app.post('/api/session', session.login);
   app.del('/api/session', session.logout);
+
+  // Auth
+  app.get('/auth/facebook',
+    passport.authenticate('facebook'),
+    function(req, res){
+    });
+  app.get('/auth/facebook/callback',
+    passport.authenticate('facebook', { failureRedirect: '/' }),
+    function(req, res) {
+      res.redirect('/account');
+    });
+  app.get('/logout', function(req, res){
+    req.logout();
+    res.redirect('/');
+  });
 
   // All undefined api routes should return a 404
   app.get('/api/*', function(req, res) {
