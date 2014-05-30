@@ -6,4 +6,7 @@
       option(disabled='', value='') What would you like to plan today?
     br
     br
-    button.btn.btn-lg.btn-success(ng-click='startPlanning()', ng-show="plan") Start planning!
+    div(ng-show='plan')
+      .alert.alert-danger.col-sm-4.col-sm-offset-4(ng-hide='plan.enabled')
+        p The {{ plan.name }} plan is comming soon...
+      button.btn.btn-lg.btn-success(ng-click='startPlanning()', ng-show='plan.enabled') Start planning!

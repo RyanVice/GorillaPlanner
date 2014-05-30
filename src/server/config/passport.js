@@ -7,7 +7,7 @@ var mongoose = require('mongoose'),
     FacebookStrategy = require('passport-facebook').Strategy,
     TwitterStrategy = require('passport-twitter').Strategy,
     GoogleStrategy = require('passport-google').Strategy,
-    config = require('./lib/config/config');
+    config = require('./config');
 
 /**
  * Passport configuration

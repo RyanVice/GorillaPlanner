@@ -7,7 +7,7 @@ angular.module('gorillaPlannerApp')
     });
 
     $scope.startPlanning = function() {
-      var url = '/' + $scope.plan.name + '-planner/';
+      var url = '/' + $scope.plan.name.toLowerCase() + '-planner/';
       $location.path(url);
     };
   });

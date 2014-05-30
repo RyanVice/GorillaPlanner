@@ -10,7 +10,7 @@
           .form-group
             label.col-sm-3.control-label(for='eventTitleTextInput', data-ng-model='title') Title
             .col-sm-9
-              input.form-control(id='eventTitleTextInput', type='text', placeholder="Enter the plan's title", autofocus='true')
+              input.form-control(id='eventTitleTextInput', type='text', placeholder="Enter the plan's title", autofocus='true', required)
           .form-group
             label.col-sm-3.control-label(for='eventDetailsTextInput', data-ng-model='description') Details
             .col-sm-9
@@ -43,22 +43,24 @@
                   .panel.panel-primary(data-ng-repeat='task in tasks')
                       .panel-heading
                         .row
-                          .panel-title
-                            .col-sm-6
+                          .col-sm-6
+                            .panel-title
                               a(href='#', style='color: white') {{ task.summary }}
-                            .col-sm-2(style='color: white')
-                              span.pull-right
-                                strong {{ task.date }}
-                                br
+                          .col-sm-3(style='color: white')
+                            .row
+                              .col-sm-7
                                 small {{ task.time }}
-                            .col-sm-4.pull-right
-                              button.btn.btn-default.glyphicon.glyphicon-pencil
-                              button.btn.btn-default.glyphicon.glyphicon-remove(data-ng-click='removeTask(task)')
+                              .col-sm-5
+                                strong {{ task.date }}
+                          .col-sm-3
+                            .btn-toolbar.pull-right
+                              button.btn.btn-default.btn-xs.glyphicon.glyphicon-pencil
                               button(
-                                class='btn btn-default glyphicon glyphicon-chevron-{{ isCollapsed ? "up" : "down" }}',
+                                class='btn btn-default btn-xs glyphicon glyphicon-chevron-{{ isCollapsed ? "up" : "down" }}',
                                 ng-click="isCollapsed = !isCollapsed"
                                 data-target='#collapse{{$index}}',
                                 data-toggle='collapse')
+                              button.btn.btn-danger.btn-xs.glyphicon.glyphicon-remove(data-ng-click='removeTask(task)')
                       .panel-collapse.collapse(id='collapse{{$index}}')
                         .panel-body
                           .col-sm-8

@@ -4,7 +4,7 @@ var api = require('./controllers/api'),
     index = require('./controllers'),
     users = require('./controllers/users'),
     session = require('./controllers/session'),
-    passport = require('./env/passport');
+    passport = require('./config/passport');
 
 var middleware = require('./middleware');
 

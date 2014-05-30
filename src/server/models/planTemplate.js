@@ -7,7 +7,8 @@ var mongoose = require('mongoose'),
  * Thing Schema
  */
 var PlanTemplateSchema = new Schema({
-    name: String
+    name: String,
+    enabled: Boolean
 });
 
 mongoose.model('PlanTemplate', PlanTemplateSchema);
